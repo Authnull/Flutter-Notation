@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_notation/flutter_notation.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('flutter_notation');
@@ -15,9 +14,5 @@ void main() {
 
   tearDown(() {
     channel.setMockMethodCallHandler(null);
-  });
-
-  test('getPlatformVersion', () async {
-    expect(await FlutterNotation.platformVersion, '42');
   });
 }
