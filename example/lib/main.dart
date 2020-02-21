@@ -9,22 +9,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Flutter Notation'),
         ),
-        body: Center(
-          child: Builder(
-            builder: (BuildContext context) {
-              return RaisedButton(
-                onPressed: () {
-                  OpacityNotation.show(
-                    context: context,
-                    child: Text('123'),
-                  );
-                },
-                child: Text('Show'),
-              );
-            },
-          ),
+        body: Builder(
+          builder: (BuildContext context) {
+            return Container(
+              margin: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: () {
+                      OpacityNotation.show(
+                        context: context,
+                        child: Text('123'),
+                      );
+                    },
+                    child: Text('Show Opacity Notation'),
+                  ),
+                ],
+              ),
+            );
+          },
         ),
       ),
     );

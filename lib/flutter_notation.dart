@@ -1,3 +1,3 @@
 library flutter_notation;
 
-export "src/opacity.dart";
+export "src/opacity/opacity.dart";

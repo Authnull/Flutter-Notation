@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_notation/src/opacity/component.dart';
 
 class OpacityNotation {
   static void show({
@@ -9,8 +10,7 @@ class OpacityNotation {
   }) {
     OverlayEntry overlayEntry = new OverlayEntry(
       builder: (context) {
-        return new Positioned(
-          top: MediaQuery.of(context).size.height * 0.7,
+        return OpacityNotationComponent(
           child: child,
         );
       },
