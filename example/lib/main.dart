@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
             builder: (BuildContext context) {
               return RaisedButton(
                 onPressed: () {
-                  Toast.show(
+                  OpacityNotation.show(
                     context: context,
                     child: Text('123'),
                   );
