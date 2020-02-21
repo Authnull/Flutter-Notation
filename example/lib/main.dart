@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
                     onPressed: () {
                       OpacityNotation.show(
                         context: context,
+                        bottom: 100,
                         child: Material(
                           child: Text('Notation'),
                         ),

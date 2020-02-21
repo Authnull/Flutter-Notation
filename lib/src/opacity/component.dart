@@ -3,10 +3,17 @@ import 'package:flutter/widgets.dart';
 class OpacityNotationComponent extends StatefulWidget {
   final Widget child;
   final Duration duration;
+  final Duration delay;
+
+  final double top;
+  final double bottom;
 
   OpacityNotationComponent({
     @required this.child,
     @required this.duration,
+    @required this.delay,
+    this.top,
+    this.bottom,
   });
 
   @override
@@ -27,11 +34,16 @@ class _OpacityNotationComponentState extends State<OpacityNotationComponent> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: MediaQuery.of(context).size.height * 0.7,
+      top: this.widget.top,
+      bottom: this.widget.bottom,
       child: AnimatedOpacity(
         opacity: this._show ? 1.0 : 0.0,
-        duration: Duration(milliseconds: 300),
-        child: this.widget.child,
+        duration: this.widget.delay,
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          alignment: Alignment.center,
+          child: this.widget.child,
+        ),
       ),
     );
   }
