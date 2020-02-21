@@ -6,24 +6,6 @@ import 'package:flutter_notation/flutter_notation.dart';
 
 void main() => runApp(MyApp());
 
-class Overlay2 extends StatelessWidget {
-  final Widget child;
-
-  Overlay2({
-    @required this.child,
-  });
-
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: <Widget>[
-          Text('123'),
-        ],
-      ),
-    );
-  }
-}
-
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -66,7 +48,15 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: RaisedButton(
+            onPressed: () {
+              Toast.show(
+                context: this.context,
+                message: '123',
+              );
+            },
+            child: Text('Show'),
+          ),
         ),
       ),
     );
