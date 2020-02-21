@@ -6,18 +6,20 @@ import 'package:flutter_notation/src/opacity/component.dart';
 class OpacityNotation {
   static void show({
     @required BuildContext context,
-    @required String title,
+    @required Widget child,
   }) {
-    OverlayEntry overlayEntry = new OverlayEntry(
-      builder: (context) {
+    final Duration duration = Duration(seconds: 3);
+    OverlayEntry overlayEntry = OverlayEntry(
+      builder: (BuildContext context) {
         return OpacityNotationComponent(
-          title: title,
+          child: child,
+          duration: duration,
         );
       },
     );
     Overlay.of(context).insert(overlayEntry);
-    new Future.delayed(Duration(seconds: 3)).then((value) {
-      // overlayEntry.remove();
+    Future.delayed(Duration(seconds: 3)).then((value) {
+      overlayEntry.remove();
     });
   }
 }
